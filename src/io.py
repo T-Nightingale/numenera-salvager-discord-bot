@@ -32,4 +32,4 @@ class Io:
         self.units = units
 
     def message(self):
-        return "* %d %s (level %d)" % (self.units, self.name, self.level)
+        return "%d %s (level %d)" % (self.units, self.name, self.level)
