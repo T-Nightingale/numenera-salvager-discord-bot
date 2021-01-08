@@ -21,9 +21,9 @@ class Delve:
             shins = self._salvage_shins()
             iotum = self._salvage_iotum(salvage_discovery_result)
             parts = self._salvage_parts(salvage_discovery_result, iotum)
-            return Loot(shins, parts, iotum)
+            return Loot(task_result, shins, parts, iotum)
 
-        return Loot()
+        return Loot(task_result)
 
     def _salvage_shins(self):
         return self.die_roller.d10()

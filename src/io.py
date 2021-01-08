@@ -1,16 +1,19 @@
 class Loot:
-    def __init__(self, shins=0, parts=0, iotum=[]):
+    def __init__(self, task_result, shins=0, parts=0, iotum=[]):
+        self.task_result = task_result
         self.shins = shins
         self.parts = parts
         self.iotum = iotum
 
     def message(self):
-        message = '\n'.join([self.shins_message(), self.parts_message(), self.iotum_message()])
+        message = '\n'.join([self.task_result_message(), self.shins_message(), self.parts_message(), self.iotum_message()])
         return message
+
+    def task_result_message(self):
+        return 'Roll: ' + str(self.task_result)
 
     def parts_message(self):
         return str(self.parts) + ' part' + self.pluralizer(self.parts)
-
 
     def shins_message(self):
         return str(self.shins) + ' shin' + self.pluralizer(self.shins)
